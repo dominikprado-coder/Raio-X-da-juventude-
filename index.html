@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educação e Futuro dos Jovens</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fb;
+    color: #243247;
+}
+
+header {
+    background: #102b4e;
+    color: white;
+    padding: 25px 8%;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+nav {
+    background: #174b7a;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #73d2de;
+}
+
+section {
+    padding: 55px 8%;
+}
+
+h2 {
+    color: #174b7a;
+    margin-bottom: 20px;
+    font-size: 27px;
+}
+
+.intro {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    line-height: 1.8;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border-top: 5px solid #168aad;
+    box-shadow: 0 3px 12px #00000010;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #174b7a;
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.7;
+}
+
+.graficos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.grafico {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    min-width: 0;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.grafico canvas {
+    max-height: 300px;
+}
+
+.relatorio {
+    background: #e4f1fa;
+    padding: 30px;
+    border-left: 6px solid #168aad;
+    border-radius: 10px;
+    line-height: 1.9;
+}
+
+button {
+    background: #168aad;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #102b4e;
+}
+
+footer {
+    background: #102b4e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+@media(max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 7px;
+        font-size: 13px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    section {
+        padding: 35px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Educação e Futuro dos Jovens</h1>
+    <p>Dados, oportunidades e propostas para transformar a educação</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#propostas">Propostas</a>
+    <a href="#relatorio">Relatório</a>
+</nav>
+
+<section id="inicio">
+    <div class="intro">
+        <h2>Apresentação do Projeto</h2>
+        <p>
+            Este projeto tem como objetivo analisar fatores relacionados
+            à educação e à qualidade de vida dos jovens, identificando
+            desafios e oportunidades para melhorar o ensino público.
+        </p>
+        <br>
+        <p>
+            Por meio da análise de dados, buscamos apresentar informações
+            de maneira acessível para a comunidade e gestores públicos,
+            contribuindo para a criação de políticas educacionais mais
+            eficientes e inclusivas.
+        </p>
+    </div>
+</section>
+
+<section id="metodologia">
+    <h2>Metodologia</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>1. Coleta de dados</h3>
+            <p>
+                Reunião de informações sobre educação, acesso à tecnologia,
+                desempenho escolar e condições sociais dos jovens.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>2. Organização</h3>
+            <p>
+                Estruturação dos dados coletados para facilitar a
+                interpretação e identificar padrões.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>3. Análise</h3>
+            <p>
+                Comparação de indicadores e identificação dos principais
+                desafios enfrentados pelos estudantes.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>4. Divulgação</h3>
+            <p>
+                Apresentação dos resultados por meio de gráficos,
+                relatórios e propostas de intervenção.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="resultados">
+    <h2>Visualização dos Resultados</h2>
+
+    <p style="margin-bottom:25px; line-height:1.7;">
+        Os gráficos abaixo são exemplos ilustrativos de como os
+        indicadores podem ser apresentados. Substitua os valores
+        pelos dados reais da pesquisa.
+    </p>
+
+    <div class="graficos">
+
+        <div class="grafico">
+            <h3>Acesso à tecnologia</h3>
+            <canvas id="grafico1"></canvas>
+        </div>
+
+        <div class="grafico">
+            <h3>Principais desafios educacionais</h3>
+            <canvas id="grafico2"></canvas>
+        </div>
+
+        <div class="grafico">
+            <h3>Áreas prioritárias de investimento</h3>
+            <canvas id="grafico3"></canvas>
+        </div>
+
+    </div>
+</section>
+
+<section id="propostas">
+    <h2>Propostas de Impacto</h2>
+
+    <p style="line-height:1.8;">
+        Com base nos desafios identificados, o projeto apresenta
+        três pilares estratégicos para melhorar o ensino e a vida
+        dos jovens.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>💻 Inclusão Digital e Recursos de Estudo</h3>
+            <p>
+                Criação ou ampliação de polos comunitários de estudos
+                com acesso gratuito à internet de alta velocidade,
+                computadores e equipamentos para jovens de baixa renda.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Apoio Socioemocional e Mentoria Escolar</h3>
+            <p>
+                Implementação de programas de mentoria estudantil e
+                acompanhamento psicossocial nas escolas públicas,
+                visando reduzir a evasão e melhorar o rendimento escolar.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Ensino e Demandas do Futuro</h3>
+            <p>
+                Oferta de cursos de capacitação técnica básica,
+                incluindo programação, análise de dados e habilidades
+                digitais, preparando os jovens para o mercado de trabalho.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="relatorio">
+    <h2>Relatório Executivo</h2>
+
+    <div class="relatorio">
+        <h3>Principais Considerações</h3>
+
+        <p>
+            A análise da educação e das condições de vida dos jovens
+            permite compreender que o desenvolvimento educacional
+            depende de diferentes fatores, como acesso à tecnologia,
+            apoio emocional e qualificação profissional.
+        </p>
+
+        <p>
+            Dessa forma, o projeto propõe ações integradas entre
+            escolas, comunidade e poder público, buscando ampliar
+            oportunidades e reduzir desigualdades.
+        </p>
+
+        <p>
+            <strong>Conclusão:</strong> investir na educação significa
+            investir no futuro dos jovens e no desenvolvimento da sociedade.
+        </p>
+
+        <button onclick="window.print()">
+            Baixar relatório / Imprimir
+        </button>
+    </div>
+</section>
+
+<footer>
+    <h3>Educação e Futuro dos Jovens</h3>
+    <p>Projeto de análise de dados e impacto social</p>
+    <p>Desenvolvido para divulgação de resultados no GitHub Pages.</p>
+</footer>
+
+<script>
+
+// GRÁFICO 1
+new Chart(document.getElementById('grafico1'), {
+    type: 'doughnut',
+    data: {
+        labels: ['Com acesso', 'Sem acesso'],
+        datasets: [{
+            data: [70, 30],
+            backgroundColor: ['#168aad', '#f4a261']
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true
+    }
+});
+
+// GRÁFICO 2
+new Chart(document.getElementById('grafico2'), {
+    type: 'bar',
+    data: {
+        labels: [
+            'Falta de recursos',
+            'Dificuldade de aprendizagem',
+            'Evasão escolar',
+            'Falta de internet'
+        ],
+        datasets: [{
+            label: 'Indicador ilustrativo (%)',
+            data: [35, 25, 20, 20],
+            backgroundColor: '#168aad'
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
+        }
+    }
+});
+
+// GRÁFICO 3
+new Chart(document.getElementById('grafico3'), {
+    type: 'pie',
+    data: {
+        labels: [
+            'Inclusão digital',
+            'Apoio socioemocional',
+            'Capacitação profissional'
+        ],
+        datasets: [{
+            data: [40, 30, 30],
+            backgroundColor: [
+                '#168aad',
+                '#52b788',
+                '#f4a261'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true
+    }
+});
+
+</script>
+
+</body>
+</html>
